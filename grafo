@@ -1,0 +1,22 @@
+class Grafo:
+    def __init__(self,n):
+        self.n = n
+        self.grafo = [[0] * self.n for i in range(self.n)]
+        
+    def insereAresta(self, u, v):
+        self.grafo[u-1][v-1] = 1
+        self.grafo[v-1][u-1] = 1
+        
+    def imprimeGrafo(self):
+        print("Matriz de Adjacências")
+        for i in range(self.n):
+            print(self.grafo[i])
+
+g = Grafo(4)
+g.insereAresta(1,3)
+g.insereAresta(1,4)
+g.insereAresta(1,2)
+g.insereAresta(2,3)
+g.insereAresta(2,4)
+g.insereAresta(4,3)
+g.imprimeGrafo()
